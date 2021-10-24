@@ -13,9 +13,9 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
 # The pre-built esdk only provides binaries for armv7 with hard-float
 python () {
-	if d.getVar("TUNE_ARCH", True) == "arm":
-		if "callconvention-hard" not in d.getVar("TUNE_FEATURES", True):
-			raise bb.parse.SkipPackage("incompatible with machine %s (pre-built esdk only works on Hard-Float ARM targets)" % d.getVar('MACHINE', True))
+    if d.getVar("TUNE_ARCH", True) == "arm":
+        if "callconvention-hard" not in d.getVar("TUNE_FEATURES", True):
+            raise bb.parse.SkipPackage("incompatible with machine %s (pre-built esdk only works on Hard-Float ARM targets)" % d.getVar('MACHINE', True))
 }
 
 S = "${WORKDIR}/esdk.${PV}"
