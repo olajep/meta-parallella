@@ -7,6 +7,14 @@ SRC_URI_append_parallella-common = " \
     file://0003-HACK-ARM-zynq-Force-MMC-boot-regardless-of-boot-conf.patch \
     "
 
-do_install_append() {
-    bbwarn "This version has not been tested"
+do_configure_prepend() {
+    [ -n "${UBOOT_DEVICE_TREE}" ] && export DEVICE_TREE="${UBOOT_DEVICE_TREE}"
+}
+#
+do_compile_prepend() {
+    [ -n "${UBOOT_DEVICE_TREE}" ] && export DEVICE_TREE="${UBOOT_DEVICE_TREE}"
+}
+#
+do_install_prepend() {
+    [ -n "${UBOOT_DEVICE_TREE}" ] && export DEVICE_TREE="${UBOOT_DEVICE_TREE}"
 }
