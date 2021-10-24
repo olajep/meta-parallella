@@ -31,7 +31,6 @@ IMAGE_INSTALL = " \
 		"
 
 IMAGE_INSTALL += "\
-   ${ROOTFS_PKGMANAGE_BOOTSTRAP} \
 	strace \
 	ldd \
 	gdbserver \
