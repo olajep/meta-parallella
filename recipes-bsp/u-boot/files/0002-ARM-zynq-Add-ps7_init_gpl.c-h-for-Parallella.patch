@@ -1,4 +1,4 @@
-From 977006d1cbd439db64e35d941f5926b538a5f248 Mon Sep 17 00:00:00 2001
+From f602be57ccb3ad3ca1f84bf7024e6e9302cf200e Mon Sep 17 00:00:00 2001
 From: Nathan Rossi <nathan@nathanrossi.com>
 Date: Thu, 17 Mar 2016 17:43:19 +1000
 Subject: [PATCH] ARM: zynq: Add ps7_init_gpl.c/h for Parallella
@@ -12,15 +12,17 @@ Signed-off-by: Nathan Rossi <nathan@nathanrossi.com>
 Cc: Michal Simek <monstr@monstr.eu>
 Upstream-Status: Submitted
 ---
- board/xilinx/zynq/zynq-parallella/ps7_init_gpl.c | 12919 +++++++++++++++++++++
- board/xilinx/zynq/zynq-parallella/ps7_init_gpl.h |    97 +
- 2 files changed, 13016 insertions(+)
+ .../zynq/zynq-parallella/ps7_init_gpl.c       | 12919 ++++++++++++++++
+ .../zynq/zynq-parallella/ps7_init_gpl.h       |    97 +
+ include/configs/zynq_parallella.h             |    17 +
+ 3 files changed, 13033 insertions(+)
  create mode 100644 board/xilinx/zynq/zynq-parallella/ps7_init_gpl.c
  create mode 100644 board/xilinx/zynq/zynq-parallella/ps7_init_gpl.h
+ create mode 100644 include/configs/zynq_parallella.h
 
 diff --git a/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.c b/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.c
 new file mode 100644
-index 0000000..0ae63dd
+index 0000000000..0ae63dd77a
 --- /dev/null
 +++ b/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.c
 @@ -0,0 +1,12919 @@
@@ -12945,7 +12947,7 @@ index 0000000..0ae63dd
 +}
 diff --git a/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.h b/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.h
 new file mode 100644
-index 0000000..fee56ac
+index 0000000000..fee56ac424
 --- /dev/null
 +++ b/board/xilinx/zynq/zynq-parallella/ps7_init_gpl.h
 @@ -0,0 +1,97 @@
@@ -13046,6 +13048,27 @@ index 0000000..fee56ac
 +#ifdef __cplusplus
 +}
 +#endif
--- 
-2.8.1
-
+diff --git a/include/configs/zynq_parallella.h b/include/configs/zynq_parallella.h
+new file mode 100644
+index 0000000000..f7d17b8270
+--- /dev/null
++++ b/include/configs/zynq_parallella.h
+@@ -0,0 +1,17 @@
++/*
++ * (C) Copyright 2016 Nathan Rossi
++ *
++ * Configuration for Adapteva Parallella Board
++ * See zynq-common.h for Zynq common configs
++ *
++ * SPDX-License-Identifier:	GPL-2.0+
++ */
++
++#ifndef __CONFIG_ZYNQ_PARALLELLA_H
++#define __CONFIG_ZYNQ_PARALLELLA_H
++
++#define CONFIG_SYS_NO_FLASH
++
++#include <configs/zynq-common.h>
++
++#endif /* __CONFIG_ZYNQ_PARALLELLA_H */
+ 

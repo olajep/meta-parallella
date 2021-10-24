@@ -1,4 +1,4 @@
-From e7b7a7982d0f1d55b5ce74b728790f1ac637b903 Mon Sep 17 00:00:00 2001
+From 0cdf615002da01472816aa48a144398e29d8eaed Mon Sep 17 00:00:00 2001
 From: Nathan Rossi <nathan@nathanrossi.com>
 Date: Fri, 11 Mar 2016 20:52:05 +1000
 Subject: [PATCH] zynq: Add Adapteva Parallella board support
@@ -14,31 +14,31 @@ Signed-off-by: Nathan Rossi <nathan@nathanrossi.com>
 Cc: Albert Aribaud <albert.u.boot@aribaud.net>
 Cc: Michal Simek <monstr@monstr.eu>
 Upstream-Status: Submitted
+Forward-ported: To 2021.01 by Ola Jeppsson <ola.jeppsson@gmail.com>
+
 ---
  arch/arm/dts/Makefile             |  1 +
- arch/arm/dts/zynq-parallella.dts  | 96 +++++++++++++++++++++++++++++++++++++++
- configs/zynq_parallella_defconfig | 36 +++++++++++++++
- include/configs/zynq_parallella.h | 17 +++++++
- 4 files changed, 150 insertions(+)
+ arch/arm/dts/zynq-parallella.dts  | 96 +++++++++++++++++++++++++++++++
+ configs/zynq_parallella_defconfig | 36 ++++++++++++
+ 3 files changed, 133 insertions(+)
  create mode 100644 arch/arm/dts/zynq-parallella.dts
  create mode 100644 configs/zynq_parallella_defconfig
- create mode 100644 include/configs/zynq_parallella.h
 
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index de75e24..70d3fec 100644
+index fd47e408f8..3a36baffb5 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -82,6 +82,7 @@ dtb-$(CONFIG_ARCH_ZYNQ) += zynq-zc702.dtb \
- 	zynq-zed.dtb \
- 	zynq-zybo.dtb \
+@@ -266,6 +266,7 @@ dtb-$(CONFIG_ARCH_ZYNQ) += \
+ 	zynq-dlc20-rev1.0.dtb \
  	zynq-microzed.dtb \
+ 	zynq-minized.dtb \
 +	zynq-parallella.dtb \
  	zynq-picozed.dtb \
- 	zynq-zc770-xm010.dtb \
- 	zynq-zc770-xm011.dtb \
+ 	zynq-syzygy-hub.dtb \
+ 	zynq-topic-miami.dtb \
 diff --git a/arch/arm/dts/zynq-parallella.dts b/arch/arm/dts/zynq-parallella.dts
 new file mode 100644
-index 0000000..2a8a805
+index 0000000000..2a8a8057b6
 --- /dev/null
 +++ b/arch/arm/dts/zynq-parallella.dts
 @@ -0,0 +1,96 @@
@@ -140,7 +140,7 @@ index 0000000..2a8a805
 +};
 diff --git a/configs/zynq_parallella_defconfig b/configs/zynq_parallella_defconfig
 new file mode 100644
-index 0000000..fe05c82
+index 0000000000..fe05c821e1
 --- /dev/null
 +++ b/configs/zynq_parallella_defconfig
 @@ -0,0 +1,36 @@
@@ -180,29 +180,4 @@ index 0000000..fe05c82
 +CONFIG_SPI_FLASH_WINBOND=y
 +CONFIG_ZYNQ_GEM=y
 +CONFIG_ZYNQ_QSPI=y
-diff --git a/include/configs/zynq_parallella.h b/include/configs/zynq_parallella.h
-new file mode 100644
-index 0000000..f7d17b8
---- /dev/null
-+++ b/include/configs/zynq_parallella.h
-@@ -0,0 +1,17 @@
-+/*
-+ * (C) Copyright 2016 Nathan Rossi
-+ *
-+ * Configuration for Adapteva Parallella Board
-+ * See zynq-common.h for Zynq common configs
-+ *
-+ * SPDX-License-Identifier:	GPL-2.0+
-+ */
-+
-+#ifndef __CONFIG_ZYNQ_PARALLELLA_H
-+#define __CONFIG_ZYNQ_PARALLELLA_H
-+
-+#define CONFIG_SYS_NO_FLASH
-+
-+#include <configs/zynq-common.h>
-+
-+#endif /* __CONFIG_ZYNQ_PARALLELLA_H */
--- 
-2.8.1
-
+ 
