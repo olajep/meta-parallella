@@ -9,8 +9,7 @@ IMAGE_INSTALL = " \
 		packagegroup-core-boot \
 		${CORE_IMAGE_EXTRA_INSTALL} \
 		packagegroup-core-buildessential \
-		packagegroup-epiphany-buildessential \
-		packagegroup-epiphany-tools \
+		packagegroup-epiphany-elf-buildessentialfromsource \
+		packagegroup-epiphany-sdk-buildessentialfromsource \
 		git \
 		"
-

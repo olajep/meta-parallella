@@ -11,16 +11,6 @@ inherit core-image
 
 IMAGE_FEATURES += "ssh-server-openssh"
 
-# OPTION:
-#
-# Either use the released Epiphany SDK using:
-#  packagegroup-epiphany-buildessential 
-#  packagegroup-epiphany-tools
-#
-# Or use build the Epiphany SDK from source using:
-#  packagegroup-epiphany-elf-buildessentialfromsource
-#  packagegroup-epiphany-sdk-buildessentialfromsource
-
 IMAGE_INSTALL = " \
 		packagegroup-core-boot \
 		${CORE_IMAGE_EXTRA_INSTALL} \
