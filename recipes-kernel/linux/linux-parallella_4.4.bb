@@ -6,10 +6,10 @@ SRCREV = "eb7c3a109b494e7f27387d119882b7a127759ada"
 
 include linux-parallella.inc
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/linux-parallella/4.4:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/linux-parallella/4.4:"
 
 # add the drivers necessary with SRCREV eb7c3a1
-SRC_URI_append = " \
+SRC_URI:append = " \
 	file://0001-dma-proof-concept-pl330.patch \
 	file://0002-dmaengine-commit-6906086.patch \
 	file://0003-dmaengine-commit-0c400db.patch \
@@ -23,12 +23,12 @@ SRC_URI_append = " \
 	"
 
 # add the device tree patches necessary with SRCREV eb7c3a1
-SRC_URI_append = " \
+SRC_URI:append = " \
 	file://0012-HDMI-device-tree.patch \
 	"
 
 # add the epiphany driver patch necessary with SRCREV eb7c3a1
-SRC_URI_append = " \
+SRC_URI:append = " \
 	file://0011-Cache-elink-rxcfg-reg.patch \
 	"
 

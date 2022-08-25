@@ -3,7 +3,7 @@ DESCRIPTION = "Epiphany SDK, include GCC, binutils, etc for the Epiphany archite
 HOMEPAGE = "https://github.com/adapteva/epiphany-sdk"
 LICENSE = "GPLv3"
 
-DOWNLOAD_ARCH_armv7a = "armv7l"
+DOWNLOAD_ARCH:armv7a = "armv7l"
 
 SRC_URI = "http://downloads.parallella.org/esdk/esdk.2014.11_linux_${DOWNLOAD_ARCH}.tar.gz"
 SRC_URI[md5sum] = "cf0014ae7aca77e11f77b58c62534f2a"
@@ -90,12 +90,12 @@ PACKAGES = " \
 		epiphany-libs-dev \
 		"
 
-INSANE_SKIP_epiphany-toolchain += "debug-files dev-so arch staticdev"
-INSANE_SKIP_epiphany-libs += "dev-so"
+INSANE_SKIP:epiphany-toolchain += "debug-files dev-so arch staticdev"
+INSANE_SKIP:epiphany-libs += "dev-so"
 
-FILES_${PN} = ""
+FILES:${PN} = ""
 
-FILES_epiphany-toolchain += " \
+FILES:epiphany-toolchain += " \
 		${bindir}/epiphany-elf-* \
 		/usr/epiphany-elf/bin/* \
 		/usr/epiphany-elf/libexec/* \
@@ -105,12 +105,12 @@ FILES_epiphany-toolchain += " \
 		/usr/epiphany-elf/epiphany-elf/* \
 		"
 
-FILES_epiphany-bsps += " \
+FILES:epiphany-bsps += " \
 		${libdir}/epiphany/bsps/* \
 		"
 
-RDEPENDS_epiphany-tools += "epiphany-libs"
-FILES_epiphany-tools += " \
+RDEPENDS:epiphany-tools += "epiphany-libs"
+FILES:epiphany-tools += " \
 		${bindir}/e-loader \
 		${bindir}/e-read \
 		${bindir}/e-write \
@@ -123,11 +123,11 @@ FILES_epiphany-tools += " \
 		${bindir}/e-trace-dump \
 		"
 
-FILES_epiphany-libs += " \
+FILES:epiphany-libs += " \
 		${libdir}/epiphany/*.so \
 		"
 
-FILES_epiphany-libs-dev += " \
+FILES:epiphany-libs-dev += " \
 		${includedir}/epiphany/* \
 		"
 

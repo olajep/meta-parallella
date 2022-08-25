@@ -4,7 +4,7 @@ LICENSE = "MIT"
 
 inherit packagegroup
 
-RDEPENDS_packagegroup-epiphany-tools = " \
+RDEPENDS:packagegroup-epiphany-tools = " \
 		epiphany-tools \
 		bash \
 		"

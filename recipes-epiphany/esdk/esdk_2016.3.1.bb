@@ -3,7 +3,7 @@ DESCRIPTION = "Epiphany SDK, include GCC, binutils, etc for the Epiphany archite
 HOMEPAGE = "https://github.com/adapteva/epiphany-sdk"
 LICENSE = "GPLv3"
 
-DOWNLOAD_ARCH_armv7a = "armv7l"
+DOWNLOAD_ARCH:armv7a = "armv7l"
 
 SRC_URI = "http://downloads.parallella.org/esdk/esdk.2016.3.1_linux_${DOWNLOAD_ARCH}.tar.gz"
 SRC_URI[md5sum] = "28eff10d2019fd80100dfce7f23dc215"
@@ -171,14 +171,14 @@ PACKAGES = " \
     epiphany-libs-dev \
     "
 
-INSANE_SKIP_epiphany-toolchain += "debug-files dev-so arch staticdev ldflags libdir"
-INSANE_SKIP_epiphany-libs += "dev-so staticdev ldflags"
-INSANE_SKIP_epiphany-tools += "ldflags"
+INSANE_SKIP:epiphany-toolchain += "debug-files dev-so arch staticdev ldflags libdir"
+INSANE_SKIP:epiphany-libs += "dev-so staticdev ldflags"
+INSANE_SKIP:epiphany-tools += "ldflags"
 
-FILES_${PN} = ""
+FILES:${PN} = ""
 
-RDEPENDS_epiphany-toolchain += "epiphany-libs"
-FILES_epiphany-toolchain += " \
+RDEPENDS:epiphany-toolchain += "epiphany-libs"
+FILES:epiphany-toolchain += " \
     ${bindir}/epiphany-elf-* \
     /usr/epiphany-elf/bin/* \
     /usr/epiphany-elf/libexec/* \
@@ -216,13 +216,13 @@ FILES_epiphany-toolchain += " \
     /usr/epiphany/epiphany-sdk/tools/e-gnu \
     "
 
-FILES_epiphany-bsps += " \
+FILES:epiphany-bsps += " \
     ${libdir}/epiphany/bsps/* \
     /usr/epiphany/epiphany-sdk/bsps \
     "
 
-RDEPENDS_epiphany-tools += "epiphany-libs"
-FILES_epiphany-tools += " \
+RDEPENDS:epiphany-tools += "epiphany-libs"
+FILES:epiphany-tools += " \
     ${bindir}/e-clear-shmtable \
     ${bindir}/e-dump-regs \
     ${bindir}/e-hw-rev \
@@ -237,7 +237,7 @@ FILES_epiphany-tools += " \
     /usr/epiphany/epiphany-sdk/tools/host/bin/* \
     "
 
-FILES_epiphany-libs += " \
+FILES:epiphany-libs += " \
     ${libdir}/epiphany/*.so \
     ${libdir}/epiphany/*.so.0 \
     ${libdir}/epiphany/*.so.0.0.0 \
@@ -246,7 +246,7 @@ FILES_epiphany-libs += " \
     /usr/epiphany/epiphany-sdk/tools/host/lib \
     "
 
-FILES_epiphany-libs-dev += " \
+FILES:epiphany-libs-dev += " \
     ${includedir}/epiphany/* \
     /usr/epiphany/epiphany-sdk/tools/host/include \
     "
