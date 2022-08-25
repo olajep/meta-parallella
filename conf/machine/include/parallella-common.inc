@@ -2,7 +2,7 @@ DEFAULTTUNE = "cortexa9thf-neon"
 
 MACHINE_EXTRA_RRECOMMENDS += "kernel-modules"
 
-require conf/machine/include/tune-cortexa9.inc
+require conf/machine/include/arm/armv7a/tune-cortexa9.inc
 
 MACHINEOVERRIDES =. "parallella-common:"
 
