@@ -4,7 +4,7 @@ SECTION = "bsp"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=17e9aa6b5e59214b6fdb51d372e23ee8"
 
-SRC_URI = "git://github.com/parallella/pubuntu.git"
+SRC_URI = "git://github.com/parallella/pubuntu.git;protocol=https"
 SRCREV = "d5785963c3587fcbac9557129f31a5ac496b266d"
 
 S = "${WORKDIR}/git"
