@@ -26,14 +26,3 @@ COMPATIBLE_MACHINE:parallella-hdmi = "parallella-hdmi"
 
 # defconfig is based on multi_v7
 KBUILD_DEFCONFIG = "multi_v7_defconfig"
-
-do_configure:prepend() {
-	cat ${S}/arch/${ARCH}/configs/${KBUILD_DEFCONFIG} > ${B}/.config
-
-	for i in ${WORKDIR}/parallella/*.cfg; do
-		cat $i >> ${B}/.config
-	done
-
-	yes '' | oe_runmake oldconfig
-}
-
