@@ -26,3 +26,6 @@ COMPATIBLE_MACHINE:parallella-hdmi = "parallella-hdmi"
 
 # defconfig is based on multi_v7
 KBUILD_DEFCONFIG = "multi_v7_defconfig"
+
+# use default value instead of no if an option is not explicitly set
+KCONFIG_MODE="alldefconfig"
